@@ -336,11 +336,13 @@ if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.ar
         miss++;
         console.log(`! ${row.name.slice(0, 60)}: ${e.message}`);
       }
-      await new Promise((r) => setTimeout(r, 300));
+      // пауза между товарами; DELAY_MS=10000 — «медленный режим», чтобы поисковик не включал проверку «не робот»
+      await new Promise((r) => setTimeout(r, Number(process.env.DELAY_MS ?? 300)));
     }
   }
 
-  await Promise.all([worker(), worker(), worker()]);
+  // WORKERS=1 — по одному товару за раз (вместе с DELAY_MS для медленного режима)
+  await Promise.all(Array.from({ length: Math.max(1, Number(process.env.WORKERS ?? 3)) }, () => worker()));
   flush();
   console.log(`\nГотово: найдено ${ok}, не найдено ${miss}, всего в патче ${Object.keys(patch).length}`);
 }
