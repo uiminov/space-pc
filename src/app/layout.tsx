@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { JetBrains_Mono, Manrope, Unbounded } from "next/font/google";
 import { getT, getTheme } from "@/lib/i18n/server";
 import "./globals.css";
@@ -10,12 +10,18 @@ const body = Manrope({ variable: "--font-body-src", subsets: ["latin", "cyrillic
 // моноширинный нужен только в характеристиках сборок — не загружаем заранее
 const mono = JetBrains_Mono({ variable: "--font-mono-src", subsets: ["latin"], preload: false });
 
+// цвет панели браузера на телефоне
+export const viewport: Viewport = { themeColor: "#0f1013" };
+
 export async function generateMetadata(): Promise<Metadata> {
-  const { t } = await getT();
+  const { t, lang } = await getT();
   return {
     title: { default: t.meta.title, template: "%s — SPACE PC" },
     description: t.meta.description,
     applicationName: "SPACE PC",
+    // полный адрес сайта — чтобы картинка превью (opengraph-image.png) подставлялась в ссылки в Telegram и соцсетях
+    metadataBase: new URL("https://space-pc.uz"),
+    openGraph: { siteName: "SPACE PC", type: "website", locale: lang === "uz" ? "uz_UZ" : "ru_RU" },
   };
 }
 
