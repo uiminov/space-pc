@@ -1,0 +1,186 @@
+@import "tailwindcss";
+
+:root {
+  /* SPACE PC «Графит и серебро» — ночная тема (по умолчанию) */
+  --bg: #0f1013;
+  --surface: #15171b;
+  --surface-2: #1c1f24;
+  --line: #24272d;
+  --line-2: #31353c;
+  --text: #dfe2e7;
+  --muted: #868c95;
+  /* акцент SPACE PC — неоновый розовый */
+  --accent: #ff2e97;
+  --accent-ink: #ffffff;
+  /* звёзды фона (R G B) и их яркость */
+  --star: 255 255 255;
+  --star-a: 0.32;
+  --danger: #ff5a5f;
+  --ok: #3ddc84;
+  --warn: #ffb020;
+  /* синий для подсказки «С запасом» */
+  --info: #4da3ff;
+  /* светло-серый «студийный» фон под фото товаров */
+  --studio: #e9ebee;
+  /* цвет свечения иконок и света на первом экране (R G B) */
+  --glow: 255 46 151;
+  color-scheme: dark;
+}
+
+/* Дневная тема */
+:root[data-theme="light"] {
+  --star: 30 34 40;
+  --star-a: 0.16;
+  --bg: #f4f5f7;
+  --surface: #ffffff;
+  --surface-2: #eceef1;
+  --line: #e1e4e8;
+  --line-2: #cdd1d7;
+  --text: #0e1013;
+  --muted: #5d636c;
+  --accent: #e6007e;
+  --accent-ink: #ffffff;
+  --danger: #e5383b;
+  --ok: #138a4b;
+  --warn: #b26b00;
+  --info: #1d6fd6;
+  --studio: #eef0f3;
+  --glow: 230 0 126;
+  color-scheme: light;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-line: var(--line);
+  --color-line-2: var(--line-2);
+  --color-text: var(--text);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-danger: var(--danger);
+  --color-ok: var(--ok);
+  --color-warn: var(--warn);
+  --color-info: var(--info);
+  --color-studio: var(--studio);
+  --font-sans: var(--font-body-src), system-ui, sans-serif;
+  --font-display: var(--font-display-src), var(--font-body-src), system-ui, sans-serif;
+  --font-mono: var(--font-mono-src), ui-monospace, monospace;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body-src), system-ui, sans-serif;
+  isolation: isolate;
+}
+
+/* едва заметное звёздное небо на фоне всего сайта (карточки его перекрывают) */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: var(--star-a);
+  background-image:
+    radial-gradient(1px 1px at 23px 41px, rgb(var(--star)), transparent 70%),
+    radial-gradient(1px 1px at 157px 113px, rgb(var(--star) / 0.7), transparent 70%),
+    radial-gradient(1.4px 1.4px at 291px 197px, rgb(var(--star)), transparent 70%),
+    radial-gradient(1px 1px at 371px 59px, rgb(var(--star) / 0.6), transparent 70%),
+    radial-gradient(1px 1px at 97px 263px, rgb(var(--star) / 0.5), transparent 70%),
+    radial-gradient(1.2px 1.2px at 233px 311px, rgb(var(--star) / 0.8), transparent 70%),
+    radial-gradient(1px 1px at 417px 281px, rgb(var(--star) / 0.5), transparent 70%);
+  background-size: 440px 340px;
+}
+
+.font-display {
+  /* заголовки и цены — Unbounded, слегка плотнее */
+  letter-spacing: -0.02em;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+@utility container-x {
+  @apply mx-auto w-full max-w-7xl px-4 sm:px-6;
+}
+@utility btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition-colors disabled:cursor-not-allowed disabled:opacity-50;
+}
+@utility btn-accent {
+  @apply btn bg-accent text-accent-ink hover:opacity-90;
+  box-shadow: 0 0 18px rgb(var(--glow) / 0.28);
+}
+@utility btn-ghost {
+  @apply btn border border-line-2 bg-surface-2 text-text hover:border-muted;
+}
+@utility btn-danger {
+  @apply btn border border-danger/40 bg-danger/10 text-danger hover:bg-danger/20;
+}
+@utility card {
+  @apply rounded-2xl border border-line bg-surface;
+}
+@utility input {
+  @apply w-full rounded-xl border border-line-2 bg-bg px-3 py-2.5 text-sm text-text outline-none placeholder:text-muted/60 focus:border-accent;
+}
+@utility label {
+  @apply mb-1.5 block text-xs font-medium uppercase tracking-wide text-muted;
+}
+@utility chip {
+  @apply inline-flex items-center rounded-full border border-line-2 px-3 py-1.5 text-sm text-muted transition-colors hover:border-muted hover:text-text;
+}
+@utility chip-on {
+  @apply border-accent bg-accent text-accent-ink hover:border-accent hover:text-accent-ink;
+}
+@utility badge {
+  @apply inline-flex items-center gap-1 rounded-md px-2 py-0.5 text-xs font-medium;
+}
+
+/* звёздное поле SPACE PC: три слоя мелких точек разного размера и шага */
+.starfield {
+  background-image:
+    radial-gradient(1px 1px at 20px 30px, rgb(255 255 255 / 0.55), transparent 60%),
+    radial-gradient(1px 1px at 140px 90px, rgb(255 255 255 / 0.35), transparent 60%),
+    radial-gradient(1.5px 1.5px at 260px 170px, rgb(150 220 255 / 0.5), transparent 60%),
+    radial-gradient(1px 1px at 330px 40px, rgb(255 255 255 / 0.3), transparent 60%),
+    radial-gradient(1px 1px at 90px 210px, rgb(255 255 255 / 0.25), transparent 60%);
+  background-size: 360px 260px;
+}
+
+[data-theme="light"] .starfield {
+  display: none;
+}
+
+.grid-bg {
+  background-image:
+    linear-gradient(to right, rgb(255 255 255 / 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.035) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* иконка переключателя темы: в ночной — солнце, в дневной — луна */
+.theme-moon {
+  display: none;
+}
+[data-theme="light"] .theme-moon {
+  display: block;
+}
+[data-theme="light"] .theme-sun {
+  display: none;
+}
+
+/* конфигуратор «Фото-стек»: карточка детали падает на место, корпус коротко подсвечивается */
+@keyframes drop-in {
+  from { opacity: 0; transform: translateY(-18px) scale(0.94); }
+  to { opacity: 1; transform: none; }
+}
+.animate-drop { animation: drop-in 0.5s cubic-bezier(0.2, 0.9, 0.25, 1.15) both; }
+@keyframes ring-pop {
+  0% { box-shadow: 0 0 0 0 rgb(var(--glow) / 0.35); }
+  100% { box-shadow: 0 0 0 14px rgb(var(--glow) / 0); }
+}
+.animate-ring { animation: ring-pop 0.8s ease-out; }
