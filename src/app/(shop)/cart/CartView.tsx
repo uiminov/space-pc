@@ -72,7 +72,7 @@ export function CartView() {
         <div className="card p-6">
           <div className="flex items-baseline justify-between">
             <span className="text-muted">{t.cart.total(valid.reduce((a, r) => a + r.qty, 0))}</span>
-            <span className="font-display text-2xl font-bold">{info ? <MoneyText text={t.money(total)} /> : "…"}</span>
+            <span className="font-display text-2xl font-semibold">{info ? <MoneyText text={t.money(total)} /> : "…"}</span>
           </div>
           {missing.length ? (
             <p className="mt-3 text-xs text-warn">{t.cart.missing}</p>

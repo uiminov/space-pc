@@ -18,7 +18,7 @@ export function Hero({ lang, minPrice, months, sub, photoBuild }: { lang: Lang; 
       {/* Телефон: заголовок во всю ширину, ниже — текст и кнопки слева, фото корпуса справа (экран компактный,
           плитки разделов видны сразу). Планшет: всё в одну колонку. Компьютер: текст слева, фото справа. */}
       <div className="container-x relative grid grid-cols-[minmax(0,1fr)_36%] items-center gap-x-3 gap-y-4 pt-6 [grid-template-areas:'h_h''t_p'] sm:grid-cols-[minmax(0,1fr)_40%] sm:gap-x-6 sm:pt-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-y-0 lg:pt-10 lg:[grid-template-areas:'h_p''t_p']">
-        <h1 className="font-display text-[clamp(1.6rem,7.4vw,3rem)] leading-[1.08] font-semibold [grid-area:h] lg:self-end lg:text-[clamp(2.4rem,4.1vw,3.6rem)]">
+        <h1 className="font-display text-[clamp(1.6rem,7.4vw,3rem)] leading-[1.14] font-medium [grid-area:h] lg:self-end lg:text-[clamp(2.4rem,4.1vw,3.6rem)]">
           {t.hero.h1a}
           <span className="block text-accent">{t.hero.h1b}</span>
         </h1>

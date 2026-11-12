@@ -50,7 +50,7 @@ export default async function Catalog({ searchParams }: PageProps<"/catalog">) {
 
   return (
     <div className="container-x py-6 sm:py-10">
-      <h1 className="font-display text-2xl font-bold sm:text-4xl">{t.catalog.title}</h1>
+      <h1 className="font-display text-2xl font-semibold sm:text-4xl">{t.catalog.title}</h1>
       <p className="mt-2 text-muted">{t.catalog.sub}</p>
 
       <div className="mt-5 flex flex-col gap-3 sm:mt-8 sm:gap-4">

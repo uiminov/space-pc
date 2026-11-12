@@ -266,7 +266,7 @@ export function BuildEditor({
             </div>
             <div className="flex items-baseline justify-between pt-2">
               <span>Цена на сайте</span>
-              <span className="font-display text-xl font-bold">{calc.price != null ? formatSum(calc.price) : "—"}</span>
+              <span className="font-display text-xl font-semibold">{calc.price != null ? formatSum(calc.price) : "—"}</span>
             </div>
             {!calc.ok ? <p className="text-xs text-danger">У части комплектующих нет цены — сборка покажется как «Цена по запросу».</p> : null}
           </div>

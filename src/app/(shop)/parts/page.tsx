@@ -16,7 +16,7 @@ export default async function PartsHome({ searchParams }: PageProps<"/parts">) {
   const all = listParts({}).items;
   return (
     <div className="container-x py-6 sm:py-10">
-      <h1 className="font-display text-2xl font-bold sm:text-4xl">{t.parts.title}</h1>
+      <h1 className="font-display text-2xl font-semibold sm:text-4xl">{t.parts.title}</h1>
       <p className="mt-2 text-muted">{t.parts.count(all.length)}</p>
 
       <form action="/parts/all" className="mt-6 flex max-w-xl gap-2">
@@ -31,7 +31,7 @@ export default async function PartsHome({ searchParams }: PageProps<"/parts">) {
         if (!tiles.length) return null;
         return (
           <section key={g.key} className="mt-8">
-            <h2 className="font-display text-xl font-bold">{g.key === "pc" ? t.parts.groupPc : t.parts.groupTech}</h2>
+            <h2 className="font-display text-xl font-semibold">{g.key === "pc" ? t.parts.groupPc : t.parts.groupTech}</h2>
             <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
               {tiles.map(({ key, items }) => (
                 <Link key={key} href={`/parts/${key}`} className="card group overflow-hidden hover:border-line-2">

@@ -92,7 +92,7 @@ export default async function ComparePage({ searchParams }: PageProps<"/admin/co
 
   return (
     <div className="max-w-6xl">
-      <h1 className="font-display text-2xl font-bold">Сравнение цен поставщиков</h1>
+      <h1 className="font-display text-2xl font-semibold">Сравнение цен поставщиков</h1>
       <p className="mt-1 text-sm text-muted">
         Найдите товар — покажем предложения всех поставщиков и выберем лучшее: в наличии и дешевле.
         Прайсы: {stats.map((x) => `${supplierName(x.supplier)} — ${x.n} поз. (${formatDate(x.at)})`).join(" · ") || "ещё не загружены"}.

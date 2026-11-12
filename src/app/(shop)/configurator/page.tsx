@@ -35,7 +35,7 @@ export default async function ConfiguratorPage({ searchParams }: PageProps<"/con
   if (!Object.keys(initial).length) initial = {};
   return (
     <div className="container-x py-6 sm:py-10">
-      <h1 className="font-display text-2xl font-bold sm:text-4xl">{t.conf.title}</h1>
+      <h1 className="font-display text-2xl font-semibold sm:text-4xl">{t.conf.title}</h1>
       <p className="mt-2 max-w-2xl text-muted">{t.conf.sub}</p>
       <Configurator options={options} initial={initial} assembly={pr.assembly} roundTo={pr.roundTo} scene={view === "draw" ? "draw" : "photo"} />
     </div>

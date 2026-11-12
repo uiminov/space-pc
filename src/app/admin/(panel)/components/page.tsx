@@ -32,7 +32,7 @@ export default async function ComponentsAdmin({ searchParams }: PageProps<"/admi
   return (
     <div className="max-w-6xl">
       <div className="flex flex-wrap items-center justify-between gap-4">
-        <h1 className="font-display text-2xl font-bold">Комплектующие</h1>
+        <h1 className="font-display text-2xl font-semibold">Комплектующие</h1>
         <Link href="/admin/components/new" className="btn-accent">+ Добавить</Link>
       </div>
       <p className="mt-1 text-sm text-muted">

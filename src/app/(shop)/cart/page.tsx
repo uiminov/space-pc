@@ -11,7 +11,7 @@ export default async function CartPage() {
   const { t } = await getT();
   return (
     <div className="container-x py-6 sm:py-10">
-      <h1 className="font-display text-2xl font-bold sm:text-3xl">{t.cart.title}</h1>
+      <h1 className="font-display text-2xl font-semibold sm:text-3xl">{t.cart.title}</h1>
       <CartView />
     </div>
   );

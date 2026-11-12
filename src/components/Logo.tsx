@@ -30,7 +30,7 @@ export function Logo({ name = "SPACE PC", className = "" }: { name?: string; cla
   return (
     <span className={`inline-flex items-center gap-2 text-text sm:gap-2.5 ${className}`}>
       <LogoMark className="h-7 w-7 shrink-0 sm:h-8 sm:w-8" />
-      <span className="font-display text-[15px] leading-none font-bold tracking-[0.02em] whitespace-nowrap sm:text-lg sm:tracking-[0.04em]">
+      <span className="font-display text-[15px] leading-none font-semibold tracking-[0.02em] whitespace-nowrap sm:text-lg sm:tracking-[0.04em]">
         {m ? (
           <>
             {m[1]}

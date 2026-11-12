@@ -96,8 +96,8 @@ body::before {
 }
 
 .font-display {
-  /* заголовки и цены — Unbounded, слегка плотнее */
-  letter-spacing: -0.02em;
+  /* заголовки и цены — Unbounded: широкий шрифт, без сжатия букв */
+  letter-spacing: 0;
 }
 
 ::selection {

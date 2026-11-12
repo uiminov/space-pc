@@ -72,7 +72,7 @@ export default async function PartPage({ params }: PageProps<"/part/[id]">) {
           <ProductImage src={p.image} alt={p.name} category={p.category} className="card aspect-[4/3]" pad="p-8" iconClass="h-40 w-40" eager sizes="(min-width: 1024px) 700px, 100vw" />
           {specRows.length ? (
             <>
-              <h2 className="font-display mt-10 text-xl font-bold">{t.part.specs}</h2>
+              <h2 className="font-display mt-10 text-xl font-semibold">{t.part.specs}</h2>
               <dl className="card mt-4 divide-y divide-line">
                 {specRows.map((r) => (
                   <div key={r.label} className="grid grid-cols-[160px_1fr] gap-3 px-5 py-3 text-sm">
@@ -91,8 +91,8 @@ export default async function PartPage({ params }: PageProps<"/part/[id]">) {
         <aside className="lg:sticky lg:top-24 lg:self-start">
           <div className="card p-6">
             <span className="badge bg-surface-2 text-muted">{t.cat[p.category] ?? p.category}</span>
-            <h1 className="font-display mt-3 text-2xl leading-tight font-bold">{p.name}</h1>
-            <div className="mt-5 font-display text-2xl font-bold sm:text-3xl"><MoneyText text={t.money(p.price)} /></div>
+            <h1 className="font-display mt-3 text-2xl leading-tight font-semibold">{p.name}</h1>
+            <div className="mt-5 font-display text-2xl font-semibold sm:text-3xl"><MoneyText text={t.money(p.price)} /></div>
             <div className="mt-1 text-sm text-muted">{t.part.orPerMonth(t.money(inst.monthly), inst.months)}</div>
             <div className={`mt-2 text-sm ${p.in_stock ? "text-ok" : "text-warn"}`}>● {p.in_stock ? t.card.inStock : t.card.onOrder}</div>
             <div className="mt-5">
@@ -122,7 +122,7 @@ export default async function PartPage({ params }: PageProps<"/part/[id]">) {
       {rel.map((r) => (
         <section key={r.title} className="mt-8 sm:mt-14">
           <div className="flex items-end justify-between gap-4">
-            <h2 className="font-display text-xl font-bold">{r.title}</h2>
+            <h2 className="font-display text-xl font-semibold">{r.title}</h2>
             <Link
               href={`/parts/${r.category}?${new URLSearchParams(Object.fromEntries(Object.entries(r.specs).map(([k, v]) => [`f_${k}`, v])))}`}
               className="text-sm text-muted hover:text-text"

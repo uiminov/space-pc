@@ -11,7 +11,7 @@ export default async function BuildsAdmin() {
   return (
     <div className="max-w-6xl">
       <div className="flex items-center justify-between gap-4">
-        <h1 className="font-display text-2xl font-bold">Сборки</h1>
+        <h1 className="font-display text-2xl font-semibold">Сборки</h1>
         <Link href="/admin/builds/new" className="btn-accent">+ Новая сборка</Link>
       </div>
       <div className="card mt-6 overflow-x-auto">

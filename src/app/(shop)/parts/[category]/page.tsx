@@ -62,7 +62,7 @@ export default async function PartsCategory({ params, searchParams }: PageProps<
         <Link href="/parts" className="hover:text-text">{t.parts.title}</Link> <span className="mx-1">/</span>{" "}
         {isAll ? t.parts.search : catTitle}
       </nav>
-      <h1 className="font-display mt-3 text-3xl font-bold">{isAll ? (q ? t.parts.searchFor(q) : t.parts.allParts) : catTitle}</h1>
+      <h1 className="font-display mt-3 text-3xl font-semibold">{isAll ? (q ? t.parts.searchFor(q) : t.parts.allParts) : catTitle}</h1>
 
       {!isAll ? (
         <div className="mt-4 flex gap-2 overflow-x-auto pb-1">

@@ -16,7 +16,7 @@ export function PromoBanner({ s, lang }: { s: Settings; lang: Lang }) {
     <section className="container-x mt-10">
       <div className="card grid grid-cols-1 overflow-hidden md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
         <div className="flex flex-col justify-center p-6 sm:p-10">
-          {title ? <h2 className="font-display text-2xl font-bold sm:text-3xl">{title}</h2> : null}
+          {title ? <h2 className="font-display text-2xl font-semibold sm:text-3xl">{title}</h2> : null}
           {text ? <p className="mt-3 max-w-xl whitespace-pre-line text-muted">{text}</p> : null}
           {s.banner_link && btn ? (
             <Link

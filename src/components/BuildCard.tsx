@@ -38,7 +38,7 @@ export function BuildCard({ b, lang }: { b: BuildCardData; lang: Lang }) {
         </div>
       </div>
       <div className="flex flex-1 flex-col p-4 sm:p-5">
-        <h3 className="font-display text-xl font-bold">{b.name}</h3>
+        <h3 className="font-display text-xl font-semibold">{b.name}</h3>
         {b.tagline ? <p className="mt-1 text-sm text-muted">{b.tagline}</p> : null}
         <dl className="mt-3 space-y-1 font-mono text-xs sm:mt-4 sm:space-y-1.5">
           {b.specs.map((s) => (
@@ -52,7 +52,7 @@ export function BuildCard({ b, lang }: { b: BuildCardData; lang: Lang }) {
           <div>
             {b.price != null ? (
               <>
-                <div className="font-display text-lg font-bold"><MoneyText text={t.money(b.price)} /></div>
+                <div className="font-display text-lg font-semibold"><MoneyText text={t.money(b.price)} /></div>
                 {b.monthly ? (
                   <div className="text-xs text-muted">
                     {t.card.perMonth(t.money(b.monthly), b.months ?? 12)}

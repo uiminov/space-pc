@@ -36,7 +36,7 @@ export default async function EditComponent({ params, searchParams }: PageProps<
         <Link href="/admin/components" className="hover:text-text">Комплектующие</Link> / {isNew ? "Новая" : c!.name}
       </nav>
       <div className="mt-2 flex items-center justify-between gap-3">
-        <h1 className="font-display text-2xl font-bold">{isNew ? "Новая комплектующая" : c!.name}</h1>
+        <h1 className="font-display text-2xl font-semibold">{isNew ? "Новая комплектующая" : c!.name}</h1>
         {c ? (
           <form action={deleteComponent}>
             <input type="hidden" name="id" value={c.id} />

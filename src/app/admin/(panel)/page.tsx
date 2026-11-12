@@ -22,14 +22,14 @@ export default async function Dashboard() {
   const stat = (label: string, value: string, href?: string, hint?: string) => (
     <Link href={href ?? "#"} className="card block p-5 hover:border-line-2">
       <div className="text-xs uppercase tracking-wide text-muted">{label}</div>
-      <div className="font-display mt-2 text-2xl font-bold">{value}</div>
+      <div className="font-display mt-2 text-2xl font-semibold">{value}</div>
       {hint ? <div className="mt-1 text-xs text-muted">{hint}</div> : null}
     </Link>
   );
 
   return (
     <div className="max-w-6xl">
-      <h1 className="font-display text-2xl font-bold">Обзор</h1>
+      <h1 className="font-display text-2xl font-semibold">Обзор</h1>
       <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {stat("Новые заказы", String(newCount), "/admin/orders", `всего ${totalOrders}`)}
         {stat("Активные сборки", String(builds.filter((b) => b.active).length), "/admin/builds", `всего ${builds.length}`)}

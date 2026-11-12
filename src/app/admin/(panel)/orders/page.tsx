@@ -45,7 +45,7 @@ export default async function OrdersAdmin({ searchParams }: PageProps<"/admin/or
 
   return (
     <div className="max-w-5xl">
-      <h1 className="font-display text-2xl font-bold">Заказы</h1>
+      <h1 className="font-display text-2xl font-semibold">Заказы</h1>
       <div className="mt-4 flex flex-wrap gap-2">
         <Link href="/admin/orders" className={`chip ${!status && !b2b ? "chip-on" : ""}`}>Все</Link>
         <Link href="/admin/orders?type=b2b" className={`chip ${b2b ? "chip-on" : ""}`}>🏢 Заявки компаний</Link>

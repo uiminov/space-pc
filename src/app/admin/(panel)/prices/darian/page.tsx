@@ -86,7 +86,7 @@ export default async function DarianPage({ searchParams }: PageProps<"/admin/pri
 
   return (
     <div className="max-w-6xl">
-      <h1 className="font-display text-2xl font-bold">Прайс Darian</h1>
+      <h1 className="font-display text-2xl font-semibold">Прайс Darian</h1>
       <div className="mt-1 flex flex-wrap items-center justify-between gap-3">
         <p className="text-sm text-muted">
           Ноутбуки, моноблоки, мониторы и аксессуары. В базе {counts.all_n} позиций, {counts.priced} с ценой, {counts.on_site} на сайте.

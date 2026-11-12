@@ -62,18 +62,18 @@ export default async function BuildPage({ params }: PageProps<"/build/[slug]">) 
           </div>
 
           <div className="mt-5 lg:hidden">
-            <h1 className="font-display text-2xl font-bold">{L.name}</h1>
+            <h1 className="font-display text-2xl font-semibold">{L.name}</h1>
             {L.tagline ? <p className="mt-1 text-sm text-muted">{L.tagline}</p> : null}
             <div className="mt-4 flex items-center justify-between gap-3">
               <div className="min-w-0">
-                <div className="font-display text-xl font-bold">{b.price ? <MoneyText text={t.money(b.price)} /> : t.card.priceOnRequest}</div>
+                <div className="font-display text-xl font-semibold">{b.price ? <MoneyText text={t.money(b.price)} /> : t.card.priceOnRequest}</div>
                 {inst ? <div className="text-xs text-muted">{t.build.orPerMonth(t.money(inst.monthly), inst.months)}</div> : null}
               </div>
               <a href="#order" className="btn-accent shrink-0 px-4 py-3">{t.order.submit}</a>
             </div>
           </div>
 
-          <h2 className="font-display mt-10 text-xl font-bold">{t.build.config}</h2>
+          <h2 className="font-display mt-10 text-xl font-semibold">{t.build.config}</h2>
           <div className="card mt-4 divide-y divide-line">
             {b.items.map((it) => (
               <div key={it.id} className="grid items-center gap-3 px-5 py-4 sm:grid-cols-[180px_64px_1fr]">
@@ -99,7 +99,7 @@ export default async function BuildPage({ params }: PageProps<"/build/[slug]">) 
 
           {L.fps ? (
             <>
-              <h2 className="font-display mt-10 text-xl font-bold">{t.build.fpsTitle}</h2>
+              <h2 className="font-display mt-10 text-xl font-semibold">{t.build.fpsTitle}</h2>
               <div className="mt-4 flex flex-wrap gap-2">
                 {L.fps.split(/,\s*/).map((f) => (
                   <span key={f} className="rounded-xl border border-line bg-surface px-4 py-2.5 text-sm">{f}</span>
@@ -111,7 +111,7 @@ export default async function BuildPage({ params }: PageProps<"/build/[slug]">) 
 
           {L.description ? (
             <>
-              <h2 className="font-display mt-10 text-xl font-bold">{t.build.desc}</h2>
+              <h2 className="font-display mt-10 text-xl font-semibold">{t.build.desc}</h2>
               <p className="mt-3 whitespace-pre-line text-muted">{L.description}</p>
             </>
           ) : null}
@@ -125,12 +125,12 @@ export default async function BuildPage({ params }: PageProps<"/build/[slug]">) 
                 {b.available ? t.card.inStock : t.card.onOrder}
               </span>
             </div>
-            <h2 className="font-display mt-3 text-3xl font-bold max-lg:text-2xl">{L.name}</h2>
+            <h2 className="font-display mt-3 text-3xl font-semibold max-lg:text-2xl">{L.name}</h2>
             {L.tagline ? <p className="mt-1 text-muted">{L.tagline}</p> : null}
             <div className="mt-6">
               {b.price ? (
                 <>
-                  <div className="font-display text-2xl font-bold sm:text-3xl"><MoneyText text={t.money(b.price)} /></div>
+                  <div className="font-display text-2xl font-semibold sm:text-3xl"><MoneyText text={t.money(b.price)} /></div>
                   {inst ? <div className="mt-1 text-sm text-muted">{t.build.orPerMonth(t.money(inst.monthly), inst.months)}</div> : null}
                 </>
               ) : (

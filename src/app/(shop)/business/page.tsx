@@ -29,7 +29,7 @@ export default async function Business({ searchParams }: PageProps<"/business">)
       <section className="border-b border-line">
         <div className="container-x py-14 sm:py-20">
           <p className="text-sm text-muted">{b.eyebrow}</p>
-          <h1 className="font-display mt-4 max-w-3xl text-[clamp(2rem,5vw,3.6rem)] leading-[1.05] font-semibold">{b.h1}</h1>
+          <h1 className="font-display mt-4 max-w-3xl text-[clamp(1.9rem,4.2vw,3rem)] leading-[1.15] font-medium">{b.h1}</h1>
           <p className="mt-5 max-w-2xl text-[1.05rem] leading-relaxed text-muted">{b.lead}</p>
           <Link href="#quote" className="mt-8 inline-flex items-center rounded-full bg-accent px-7 py-3.5 text-[15px] font-semibold text-accent-ink transition-opacity hover:opacity-85">
             {b.quoteBtn}
@@ -37,8 +37,8 @@ export default async function Business({ searchParams }: PageProps<"/business">)
           <ul className="mt-12 grid grid-cols-2 gap-y-5 border-t border-line pt-6 lg:grid-cols-4">
             {b.trust.map((x) => (
               <li key={x.t} className="pr-4">
-                <div className="text-sm font-medium">{x.t}</div>
-                <div className="mt-0.5 text-xs text-muted">{x.d}</div>
+                <div className="text-[15px] font-semibold">{x.t}</div>
+                <div className="mt-1 text-sm text-muted">{x.d}</div>
               </li>
             ))}
           </ul>
@@ -46,7 +46,7 @@ export default async function Business({ searchParams }: PageProps<"/business">)
       </section>
 
       <section className="container-x mt-10 sm:mt-16">
-        <h2 className="font-display text-2xl font-bold sm:text-3xl">{b.segTitle}</h2>
+        <h2 className="font-display text-2xl font-semibold sm:text-3xl">{b.segTitle}</h2>
         <p className="mt-2 max-w-2xl text-muted">{b.segSub}</p>
         <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
           {b.segments.map((x) => (
@@ -65,7 +65,7 @@ export default async function Business({ searchParams }: PageProps<"/business">)
       </section>
 
       <section className="container-x mt-12 sm:mt-20">
-        <h2 className="font-display text-2xl font-bold sm:text-3xl">{b.offerTitle}</h2>
+        <h2 className="font-display text-2xl font-semibold sm:text-3xl">{b.offerTitle}</h2>
         <div className="mt-6 grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
           {b.offer.map((o, i) => (
             <div key={o.t} className="bg-surface p-6">
@@ -78,7 +78,7 @@ export default async function Business({ searchParams }: PageProps<"/business">)
       </section>
 
       <section className="container-x mt-12 sm:mt-20">
-        <h2 className="font-display text-2xl font-bold sm:text-3xl">{b.stepsTitle}</h2>
+        <h2 className="font-display text-2xl font-semibold sm:text-3xl">{b.stepsTitle}</h2>
         <ol className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
           {b.steps.map((st, i) => (
             <li key={st.t} className="border-t border-line-2 pt-5">
@@ -93,7 +93,7 @@ export default async function Business({ searchParams }: PageProps<"/business">)
       <section id="quote" className="container-x mt-12 sm:mt-20 scroll-mt-24">
         <div className="card grid grid-cols-1 gap-8 p-6 sm:p-10 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)]">
           <div>
-            <h2 className="font-display text-2xl font-bold sm:text-3xl">{b.formTitle}</h2>
+            <h2 className="font-display text-2xl font-semibold sm:text-3xl">{b.formTitle}</h2>
             <p className="mt-3 text-muted">{b.formSub}</p>
           </div>
           <QuoteForm key={segment} segment={segment} />

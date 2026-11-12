@@ -53,7 +53,7 @@ export default async function PricesPage({ searchParams }: PageProps<"/admin/pri
 
   return (
     <div className="max-w-6xl">
-      <h1 className="font-display text-2xl font-bold">Прайс AGE UZ</h1>
+      <h1 className="font-display text-2xl font-semibold">Прайс AGE UZ</h1>
       <div className="mt-1 flex flex-wrap items-center justify-between gap-3">
         <p className="text-sm text-muted">
           Загрузите свежий прайс — цены и наличие всех привязанных комплектующих и сборок обновятся автоматически.

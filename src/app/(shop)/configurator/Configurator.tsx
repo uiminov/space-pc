@@ -348,7 +348,7 @@ export function Configurator({
     return (
       <>
         <div className="flex items-baseline justify-between gap-3">
-          <h2 className="font-display text-2xl font-bold">{catLabel(cat)}</h2>
+          <h2 className="font-display text-2xl font-semibold">{catLabel(cat)}</h2>
           <span className="shrink-0 text-xs text-muted">{required ? t.conf.required : t.conf.optional}</span>
         </div>
         {cur ? <p className="mt-1 truncate text-sm text-muted">✓ {cur.name}</p> : null}
@@ -366,9 +366,9 @@ export function Configurator({
                   className={`w-[160px] shrink-0 rounded-lg border bg-bg px-2.5 pt-2.5 pb-2 text-left transition-colors sm:w-auto ${cur?.id === p.opt.id ? "border-accent" : "border-line-2 hover:border-text/40"}`}
                 >
                   <span className={`block h-[3px] w-7 rounded-full ${TAG_DOT[p.tag]}`} />
-                  <span className="font-display mt-2 block text-[13px] leading-none font-bold">{t.conf.tag[p.tag]}</span>
+                  <span className="font-display mt-2 block text-[13px] leading-none font-semibold">{t.conf.tag[p.tag]}</span>
                   <span className="mt-1.5 line-clamp-2 block text-xs leading-snug text-muted">{p.opt.name}</span>
-                  <span className="font-display mt-1.5 block text-[13px] font-bold"><MoneyText text={money(r1k(p.opt.price))} /></span>
+                  <span className="font-display mt-1.5 block text-[13px] font-semibold"><MoneyText text={money(r1k(p.opt.price))} /></span>
                 </button>
               ))}
             </div>
@@ -470,7 +470,7 @@ export function Configurator({
   // Итог: состав, проверки, советы и оформление
   const summary = () => (
     <>
-      <h2 className="font-display text-2xl font-bold">{t.conf.yourBuild}</h2>
+      <h2 className="font-display text-2xl font-semibold">{t.conf.yourBuild}</h2>
       <ul className="mt-4 divide-y divide-line rounded-xl border border-line">
         {steps.slice(0, -1).map((c, i) => (
           <li key={c} className="flex items-center">
@@ -509,7 +509,7 @@ export function Configurator({
       </div>
       <div className="mt-3 flex items-baseline justify-between border-t border-line pt-3">
         <span className="text-sm text-muted">{t.conf.total}</span>
-        <span className="font-display text-2xl font-bold"><MoneyText text={money(total)} /></span>
+        <span className="font-display text-2xl font-semibold"><MoneyText text={money(total)} /></span>
       </div>
       {recommendedPsu ? <p className="mt-2 text-xs text-muted">{t.conf.psuRec(recommendedPsu)}</p> : null}
       {missing.length || issues.length ? (
@@ -581,7 +581,7 @@ export function Configurator({
             footer={
               <div className="lg:flex lg:items-baseline lg:justify-between">
                 <div className="text-xs text-muted">{t.conf.partsCount(parts.length)}</div>
-                <div className="font-display text-xl font-bold"><MoneyText text={money(total)} /></div>
+                <div className="font-display text-xl font-semibold"><MoneyText text={money(total)} /></div>
               </div>
             }
           />
@@ -592,7 +592,7 @@ export function Configurator({
           </div>
           <div className="min-w-0 flex-1 lg:mt-3 lg:flex lg:items-baseline lg:justify-between">
             <div className="text-xs text-muted">{t.conf.partsCount(parts.length)}</div>
-            <div className="font-display text-xl font-bold"><MoneyText text={money(total)} /></div>
+            <div className="font-display text-xl font-semibold"><MoneyText text={money(total)} /></div>
             <div className="mt-1 text-xs text-muted lg:hidden">{t.conf.step(step + 1, steps.length)}</div>
           </div>
         </div>
@@ -649,7 +649,7 @@ export function Configurator({
           </button>
           <div className="min-w-0 flex-1">
             <div className="truncate text-xs text-muted">{isSummary ? t.conf.summary : catLabel(cat)}</div>
-            <div className="font-display text-base leading-tight font-bold sm:text-lg"><MoneyText text={money(total)} /></div>
+            <div className="font-display text-base leading-tight font-semibold sm:text-lg"><MoneyText text={money(total)} /></div>
           </div>
           {isSummary ? (
             <a href="#conf-order" className="btn-accent shrink-0 px-5 py-2.5">{t.conf.toOrder}</a>

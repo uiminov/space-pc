@@ -34,7 +34,7 @@ export default async function Home() {
   const tileLabel = (k: string) => (k === "parts" ? t.menu.parts : t.catPlural[k] ?? k);
   const rowTitle = (k: string) => (k === "gamingMonitors" ? t.menu.gamingMonitors : t.catPlural[k] ?? k);
   const bRows = rows.filter((r) => r.key === "laptop" || r.key === "gamingMonitors");
-  const h2 = "font-display text-xl font-bold sm:text-3xl";
+  const h2 = "font-display text-xl font-semibold sm:text-3xl";
 
   return (
     <>
@@ -48,12 +48,12 @@ export default async function Home() {
         <div className="mt-5 grid gap-3 sm:mt-6 sm:grid-cols-2 sm:gap-5">
           <Link href="/catalog" className="card group grid grid-cols-[minmax(0,1fr)_30%] items-stretch overflow-hidden transition-colors hover:border-line-2 sm:grid-cols-[minmax(0,1fr)_38%]">
             <div className="flex min-w-0 flex-col p-4 sm:p-7">
-              <div className="font-display text-lg font-bold sm:text-2xl">{t.home.chooseReady.t}</div>
+              <div className="font-display text-lg font-semibold sm:text-2xl">{t.home.chooseReady.t}</div>
               <p className="mt-2 line-clamp-3 text-[13px] text-muted sm:line-clamp-none sm:text-sm">{t.home.chooseReady.d}</p>
               {minPrice != null ? (
                 <div className="mt-3 text-sm">
                   <span className="text-muted">{lang === "uz" ? "" : "от "}</span>
-                  <span className="font-display font-bold"><MoneyText text={t.money(minPrice)} /></span>
+                  <span className="font-display font-semibold"><MoneyText text={t.money(minPrice)} /></span>
                   <span className="text-muted">{lang === "uz" ? " dan" : ""}</span>
                 </div>
               ) : null}
@@ -63,7 +63,7 @@ export default async function Home() {
           </Link>
           <Link href="/configurator" className="card group grid grid-cols-[minmax(0,1fr)_30%] items-stretch overflow-hidden transition-colors hover:border-line-2 sm:grid-cols-[minmax(0,1fr)_38%]">
             <div className="flex min-w-0 flex-col p-4 sm:p-7">
-              <div className="font-display text-lg font-bold sm:text-2xl">{t.home.chooseOwn.t}</div>
+              <div className="font-display text-lg font-semibold sm:text-2xl">{t.home.chooseOwn.t}</div>
               <p className="mt-2 line-clamp-3 text-[13px] text-muted sm:line-clamp-none sm:text-sm">{t.home.chooseOwn.d}</p>
               <span className="mt-auto pt-4 sm:pt-5"><span className="btn-ghost px-4 text-[13px] whitespace-nowrap sm:px-5 sm:text-sm">{t.home.chooseOwn.btn} →</span></span>
             </div>
@@ -102,7 +102,7 @@ export default async function Home() {
             <Link key={tl.key} href={tl.href} className="card group flex flex-col overflow-hidden transition-colors hover:border-line-2">
               <ProductImage src={tl.image} category={tl.key === "parts" ? "gpu" : tl.key} className="aspect-[4/3] border-b border-line" pad="p-4" iconClass="h-12 w-12" zoom />
               <div className="flex flex-1 flex-col p-3 sm:p-4">
-                <div className="font-display line-clamp-2 min-h-[2.5em] text-sm leading-tight font-bold sm:text-base">{tileLabel(tl.key)}</div>
+                <div className="font-display line-clamp-2 min-h-[2.5em] text-sm leading-tight font-semibold sm:text-base">{tileLabel(tl.key)}</div>
                 <div className="mt-1 text-xs text-muted">{tl.min != null ? t.parts.tile(tl.count, t.money(tl.min)) : tl.count}</div>
               </div>
             </Link>
@@ -159,7 +159,7 @@ export default async function Home() {
       <section className="container-x mt-12 sm:mt-16">
         <Link href="/business" className="group flex flex-col gap-4 rounded-2xl border border-line p-6 hover:border-line-2 sm:flex-row sm:items-center sm:justify-between sm:p-8">
           <div>
-            <h2 className="font-display text-xl font-bold">{t.b2b.bannerTitle}</h2>
+            <h2 className="font-display text-xl font-semibold">{t.b2b.bannerTitle}</h2>
             <p className="mt-1 max-w-2xl text-sm text-muted">{t.b2b.bannerText}</p>
           </div>
           <span className="shrink-0 text-sm font-semibold whitespace-nowrap">

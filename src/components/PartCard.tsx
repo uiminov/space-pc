@@ -36,7 +36,7 @@ export function PartCard({ p, lang }: { p: PartCardData; lang: Lang }) {
         </Link>
         <p className="mt-1 line-clamp-1 min-h-4 text-xs leading-4 text-muted">{specs}</p>
         <div className="mt-auto pt-4">
-          <div className="font-display text-base font-bold sm:text-lg"><MoneyText text={t.money(p.price)} /></div>
+          <div className="font-display text-base font-semibold sm:text-lg"><MoneyText text={t.money(p.price)} /></div>
           <div className={`text-xs ${p.inStock ? "text-ok" : "text-warn"}`}>{p.inStock ? t.card.inStock : t.card.onOrder}</div>
           <div className="mt-3">
             <AddToCart id={p.id} size="sm" />

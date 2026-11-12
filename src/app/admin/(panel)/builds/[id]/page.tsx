@@ -23,7 +23,7 @@ export default async function EditBuild({ params, searchParams }: PageProps<"/ad
         <Link href="/admin/builds" className="hover:text-text">Сборки</Link> / {isNew ? "Новая" : b!.name}
       </nav>
       <div className="mt-2 flex flex-wrap items-center justify-between gap-3">
-        <h1 className="font-display text-2xl font-bold">{isNew ? "Новая сборка" : b!.name}</h1>
+        <h1 className="font-display text-2xl font-semibold">{isNew ? "Новая сборка" : b!.name}</h1>
         {!isNew ? (
           <div className="flex gap-2">
             <Link href={`/build/${b!.slug}`} target="_blank" className="btn-ghost">На сайте ↗</Link>
